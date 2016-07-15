@@ -3,23 +3,19 @@
 @lt-gray: #dddddd;
 @indigo: #303f9f;
 @dark-indigo: #1a237e;
-@light-indigo: #7986CB;
-
-// Height variables
+@light-indigo: #7986CB; // Height variables
 @carousel-height: 300px;
-
-.zero-margin (@pad-up-dn: 0px, @pad-left-right: 0px) {
-	margin:0px auto;
+.zero-margin (@pad-up-dn:0px, @pad-left-right: 0px) {
+	margin: 0 auto;
 	padding: @pad-up-dn @pad-left-right;
 }
-
 .row-header {
 	.zero-margin();
 }
 .row-content {
 	.zero-margin (50px, 0px);
 	border-bottom: 1px ridge;
-	min-height:400px;
+	min-height: 400px;
 }
 .row-footer {
 	.zero-margin(20px, 0px);
@@ -27,12 +23,11 @@
 }
 .jumbotron {
 	.zero-margin(70px, 30px);
-	background:@light-indigo;
-	color:floralwhite;
+	background: @light-indigo;
+	color: floralwhite;
 }
-
 .carousel {
-	background:@dark-indigo;
+	background: @dark-indigo;
 	.item {
 		height: @carousel-height;
 		img {
@@ -43,11 +38,10 @@
 		}
 	}
 }
-
 .navbar-inverse {
 	background: @indigo;
-	color:@white;
-	.navbar-nav>.active>a {
+	color: @white;
+	.navbar-nav > .active > a {
 		background: @dark-indigo;
 		color: @white;
 		&:hover {
@@ -59,7 +53,7 @@
 			color: @white;
 		}
 	}
-	.navbar-nav>.open>a {
+	.navbar-nav > .open > a {
 		background: @dark-indigo;
 		color: @white;
 		&:hover {
@@ -73,30 +67,29 @@
 	}
 	.navbar-nav {
 		.open {
-			.dropdown-menu>li>a {
+			.dropdown-menu > li > a {
 				background-color: @indigo;
-				color:@off-white;
+				color: @off-white;
 				&:hover {
-					color:#000000;
+					color: #000000;
 				}
 			}
 			.dropdown-menu {
 				background-color: @indigo;
-				color:@off-white;
+				color: @off-white;
 			}
 		}
 	}
 }
-
 address {
-	color:#0f0f0f;
-	font-size:80%;
-	margin:0px;
+	color: #0f0f0f;
+	font-size: 80%;
+	margin: 0;
 }
 body {
-	align:center;
-	padding:50px 0px 0px 0px;
-	z-index:0;
+	align: center;
+	padding: 50px 0 0;
+	z-index: 0;
 }
 .tab-content {
 	border-bottom: 1px solid @lt-gray;
@@ -105,10 +98,10 @@ body {
 	padding: 10px;
 }
 .affix {
-	top:100px;
+	top: 100px;
 }
 #carouselButtons {
-	bottom: 0px;
+	bottom: 0;
 	position: absolute;
-	right:0px;
+	right: 0;
 }
