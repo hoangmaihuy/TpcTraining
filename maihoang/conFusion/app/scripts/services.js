@@ -167,7 +167,7 @@ angular.module('confusionApp')
   // that returns a selected promotion.
   this.getPromotion = function() {
     return promotions[0];
-  }
+  };
 
 })
 
@@ -209,10 +209,10 @@ angular.module('confusionApp')
   corpfac.leadership = leadership;
   corpfac.getLeaders = function() {
     return corpfac.leadership;
-  }
+  };
   corpfac.getLeader = function(index) {
     return corpfac.leadership[index];
-  }
+  };
   return corpfac;
 })
 

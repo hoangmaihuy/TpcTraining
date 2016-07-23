@@ -63,7 +63,7 @@ angular.module('confusionApp')
 
     console.log($scope.feedback);
 
-    if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
+    if ($scope.feedback.agree && ($scope.feedback.mychannel === "")) {
       $scope.invalidChannelSelection = true;
       console.log('incorrect');
     } else {
@@ -92,38 +92,37 @@ angular.module('confusionApp')
 
 .controller('DishCommentController', ['$scope', function($scope) {
 
-  $scope.mycomment = {
-    rating: 5,
-    comment: "",
-    author: "",
-    date: ""
-  };
-
-  $scope.submitComment = function() {
-
-    $scope.mycomment.date = new Date().toISOString();
-    console.log($scope.mycomment);
-
-    $scope.dish.comments.push($scope.mycomment);
-
-    $scope.commentForm.$setPristine();
-
     $scope.mycomment = {
       rating: 5,
       comment: "",
       author: "",
       date: ""
     };
-  }
-}])
-// implement the IndexController and About Controller here
-.controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
+
+    $scope.submitComment = function() {
+
+      $scope.mycomment.date = new Date().toISOString();
+      console.log($scope.mycomment);
+
+      $scope.dish.comments.push($scope.mycomment);
+
+      $scope.commentForm.$setPristine();
+
+      $scope.mycomment = {
+        rating: 5,
+        comment: "",
+        author: "",
+        date: ""
+      };
+    };
+  }])
+  // implement the IndexController and About Controller here
+  .controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
     $scope.promotion = menuFactory.getPromotion();
     $scope.leader = corporateFactory.getLeader(3);
     $scope.dish = menuFactory.getDish(0);
-}])
+  }])
 
-.controller('AboutController',['$scope', 'corporateFactory', function($scope, corporateFactory) {
-    $scope.leadership = corporateFactory.getLeaders();
-}])
-;
+.controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
+  $scope.leadership = corporateFactory.getLeaders();
+}]);
