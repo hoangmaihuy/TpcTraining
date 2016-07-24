@@ -22,12 +22,18 @@ gulp.task('jshint', function() {
 
 // Clean
 gulp.task('clean', function() {
-  return del(['dist']);
+  return del(['dist', 'json-server/public']);
 });
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('usemin', 'imagemin', 'copyfonts');
+  gulp.start('usemin', 'imagemin', 'copyfonts', 'copyviews');
+});
+
+var rename = require("gulp-rename");
+
+gulp.task('copydist', function() {
+    return gulp.src('dist').pipe(gulp.dest('json-server/public'));
 });
 
 gulp.task('usemin', ['jshint'], function() {
@@ -58,6 +64,11 @@ gulp.task('copyfonts', ['clean'], function() {
     .pipe(gulp.dest('./dist/fonts'));
   gulp.src('./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eof,svg}*')
     .pipe(gulp.dest('./dist/fonts'));
+});
+
+gulp.task('copyviews', ['clean'], function() {
+    gulp.src('./app/views/*.html')
+        .pipe(gulp.dest('./dist/views'));
 });
 
 // Watch
