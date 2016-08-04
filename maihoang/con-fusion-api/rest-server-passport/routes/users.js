@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var User = require('../models/user');
 var Verify = require('./verify');
-
+var token = Verify.getToken({"username":user.username, "_id":user._id, "admin":user.admin});
 /* GET users listing. */
 router.get('/', Verify.verifyAdmin, function(req, res, next) {
   User.find({}, function(err, user) {
