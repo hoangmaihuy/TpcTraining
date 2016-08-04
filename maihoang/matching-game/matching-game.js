@@ -19,9 +19,9 @@ function generateFaces() {
 }
 
 function startGame() {
-    leftSide = document.getElementById("leftSide");
-    rightSide = document.getElementById("rightSide");
-    theBody = document.getElementById("theBody");
+    leftSide = document.getElementById("left-side");
+    rightSide = document.getElementById("right-side");
+    theBody = document.getElementById("the-body");
     numberOfFaces = 0;
     faceImg = document.createElement("img");
     faceImg.src = "smile.png";

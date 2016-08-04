@@ -1,3 +1,6 @@
+var target;
+var count;
+
 function check(color) {
     var index = color.indexOf(color);
     if (index < 0) {
@@ -5,7 +8,7 @@ function check(color) {
         return false;
     }
     if (color == target) {
-        myBody = document.getElementsByTagName("body")[0];
+        var myBody = document.getElementsByTagName("body")[0];
         myBody.style.background = target;
         alert("Congratulations! You have guessed the color!\nIt took you " + count + " guesses to finish the game!\nYou can see the colour in the background.");
         return true;
@@ -21,11 +24,10 @@ function check(color) {
 }
 
 function do_game() {
-    color = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
+    var color = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
     target = color[Math.floor(Math.random() * color.length)];
-    stop = false;
+    var stop = false;
     count = 0;
-    alert("Answer is " + target);
     while (!stop) {
         guess_text = prompt("I'm thinking of one of these color\n\n" + color.join(", ") + "\n\nWhat color am I thinking of?");
         count++;
